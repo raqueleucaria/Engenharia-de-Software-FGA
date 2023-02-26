@@ -1,0 +1,168 @@
+import plotly.express as px
+import pandas as pd
+
+# le as bases de dados usadas    
+df_world = pd.read_csv('/home/eucaria/Downloads/owid-covid-data (1).csv')
+df_brazil = pd.read_csv('/home/eucaria/Downloads/covid-estados.csv')
+
+#filtragem da base de dados 
+filt_world = ["total_cases", "location", "date", "total_deaths", "human_development_index", "total_vaccinations", "total_cases_per_million", "total_deaths_per_million"]
+filt_brazil = ["date", "state", "confirmed", "deaths", "death_rate", "confirmed_per_100k_inhabitants"]
+lists_world = {}
+lists_brazil = {}
+
+#tolist 
+for i in filt_world:
+    lists_world[i] = df_world[i].tolist()
+for i in filt_brazil:
+    lists_brazil[i] = df_brazil[i].tolist()
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#determina a primeira variável das opções do loop
+option1 = 1
+
+# loop central do programa
+while option1 != 3:
+    print("""
+        OPÇÕES:
+    1. No mundo
+    2. No Brasil
+    3. Sair
+    """)
+    option1 = int(input("Digite a amplitude do gráfico: "))
+
+    if option1 == 1:
+        print("Mundo")
+        print("""
+                OPÇÕES:
+            1. total de casos
+            2. total de casos por milhão de habitantes
+            3. total de mortes
+            4. total de mortes por milhão de habitantes
+            5. total de vacinações
+            """)
+        option2 = int(input("Digite tipo de gráfico: "))
+
+        # como foram reduzidas as bases, precisamos retirar as datas em que não ocorreram vacinação
+        if option2 == 5:
+            tmp = "total_vaccinations"
+            data_filter = []
+            vac = []
+            loc = []
+            for i,j in enumerate(lists_world["date"]):
+                #2020-12-14
+                ano = int(j[0:4]) # 0, 1, 2 e 3 
+                mes = int(j[5:7]) # 5 e 6 
+                if ano == 2021 or (ano == 2020 and mes == 12):
+                    data_filter.append(j)
+                    vac.append(lists_world[tmp][i])
+                    loc.append(lists_world["location"][i])
+            fig = px.line(x=data_filter, y=vac, color=loc, title=tmp)
+            fig.show()
+        else:
+            n = option2 - 1
+            options = ["total_cases", "total_cases_per_million", "total_deaths", "total_deaths_per_million", "total_vaccinations"]
+            tmp = options[n]
+            fig = px.line(x=lists_world["date"], y=lists_world[tmp], color=lists_world["location"], title=tmp)
+            fig.show()
+          
+    elif option1 == 2:
+        print("Brasil")
+        print("""
+            OPÇÕES:
+            1. total de casos
+            2. total de casos a cada 100 mil pessoas
+            3. total de mortes
+            4. taxa de mortalidade
+            """)
+        option2 = int(input("Digite a informação do gráfico: "))
+
+        if option2 == 4:
+            fig = px.line(x=lists_brazil["date"], y=lists_brazil["death_rate"], color=lists_brazil["state"], title="death_rate")
+            fig.show()
+
+        else:
+            n = option2 - 1
+            options = ["confirmed", "confirmed_per_100k_inhabitants", "deaths"]
+            tmp = options[n]
+
+            print("""
+                OPÇÕES:
+                1. Linhas
+                2. Barras (comparação do momento atual)
+                """)
+            option3 = int(input("Digite o tipo do gráfico: "))
+
+            if option3 == 1:
+                    fig = px.line(x=lists_brazil["date"], y=lists_brazil[tmp], color=lists_brazil["state"], title=tmp)
+                    fig.show()
+                
+            if option3 == 2:
+                print("""
+                    OPÇÕES:
+                    1. Entre os estados
+                    2. Entre as regiões
+                    """)
+                option4 = int(input("Digite a forma de comparação: "))
+                
+                state_list = lists_brazil["state"]
+                data = lists_brazil[tmp]
+
+                states = {}
+
+                for i in range(len(state_list)):
+                    state = state_list[i]
+                    dataframe = data[i]
+                       #dataframe = variavel escolhida
+                    if state in states:
+                        if states[state] < dataframe:
+                            states[state] = dataframe
+                    else:
+                        states[state] = dataframe
+                    
+                if option4 == 1:
+                    fig = px.bar(x=states.keys(), y=states.values(), color=states.keys(), title=tmp)
+                    fig.show()
+
+                elif option4 == 2:
+                    brazil = {
+                        'Norte': ["AC", "AM", "AP", "PA", "RO", "RR", "TO"],
+                        'Nordeste' : ["AL", "BA", "CE", "MA", "PB", "PE", "PI", "SE", "RN"],
+                        'Sudeste' : ["ES", "SP", "MG", "RJ"],
+                        "Centro-Oeste" : ["DF", "GO", "MT", "MS"],
+                        "Sul" : ["PR", "RS", "SC"]
+                    }
+
+                    #lista com as chaves do dicionario
+                    region_division = list(brazil.keys())
+                    brazilian_region = []
+                    
+                    #OPÇÃO 1
+                    #for m in region_division:
+                    #    brazilian_region.append(sum([states[region] for region in brazil[m]]))
+
+                    #OPÇÃO 2
+                    for region in brazil:
+                        s = 0
+                        for sta in brazil[region]:
+                            s += states[sta]
+                        brazilian_region.append(s)
+
+
+                    #for m in brazil[region]] -> percorre lista de estados de cada região
+                    fig = px.bar( x=region_division, y=brazilian_region, color=region_division, title=tmp)
+                    fig.show()
+
+    elif option1 == 3:
+        print("""
+            OBRIGADO
+        ENCERRANDO PROGRAMA
+        """)
+        
+    else:
+        print("""
+        OPÇÃO INVALIDA!
+        DIGITE NOVAMENTE
+        """)
+        
