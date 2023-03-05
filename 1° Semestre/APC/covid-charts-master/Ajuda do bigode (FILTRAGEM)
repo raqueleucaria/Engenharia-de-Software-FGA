@@ -1,0 +1,38 @@
+import pandas as pd
+# import plotly.express as px
+df = pd.read_csv("data.csv")
+
+# exemplo = {
+#         "a":0,
+#         "b":0,
+#         "c":0
+#         }
+#
+# print(exemplo)
+#
+# exemplo["a"] = 20
+# exemplo["b"] = 40
+#
+# print(exemplo)
+
+filtragem = {
+        "Asia": [],
+        "Africa": [],
+        "South America": [],
+        "North America": [],
+        "Europe": [],
+        "Oceania": []
+        }
+lista_dados = df.values.tolist()
+for linha in lista_dados:
+    tmp = []
+    if linha[1] in filtragem:
+        tmp.append(linha[0])
+        tmp.append(linha[1])
+        tmp.append(linha[2])
+        tmp.append(linha[6])
+        filtragem[linha[1]].append(tmp)
+
+# filtrado = pd.DataFrame(filtragem)
+print (filtragem["Asia"][0])
+print (filtragem["Europe"][0])

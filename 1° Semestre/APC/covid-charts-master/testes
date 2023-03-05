@@ -1,0 +1,22 @@
+import pandas as pd
+import plotly.express as px
+df = pd.read_csv("/home/eucaria/Downloads/owid-covid-data (1).csv")
+
+#print (df.loc[5:9])
+#print (df.loc[[1,3,6]])
+
+#df.loc[<linhas>, <colunas>]
+#df.head()
+america_sul = []
+lista_dados = df.values.tolist()
+for linha in lista_dados:
+    if linha[1] == "South America":
+        america_sul.append(linha) #ta lendo a lista e adicionando os dados nessa variavel se tiver o continente south america
+    
+    #for coluna in linha:
+     #   print(f*coluna {coluna}*)
+
+filtrado = df.loc[lista_dados]
+
+
+print (filtrado)
