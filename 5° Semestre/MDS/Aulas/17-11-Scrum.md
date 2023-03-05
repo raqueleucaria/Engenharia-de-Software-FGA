@@ -1,0 +1,40 @@
+## Passos
+Definir o tema -> definir requisitos -> definir arquitetura
+
+## Termos usuais:
+- **Parser:** Método ou função que faça leitura de arquivo, processe e transforme em banco de dados
+- **Spike:** Planejamento e  experiemntal (software teste)
+- **regex:** ctrl f
+
+- Software de qualidade -> orientado a métricas
+
+
+
+# Scrum
+- Manifesto ágil: Scrum, XP e kanban (base das metodologias) --> vamos usar os 3
+- Usaremos mais scrum no inicio do projeto
+- Feito para equipe e para trazer produtividade
+- Uma issue por semana (para cada) -> quebra de tarefas longas em pequenas na semana -> com revisão e retrospectiva
+- trabalhar pouco mais sempre
+- Uma história de usuário tem q ser realizada em uma sprint
+- Receita de bolo: 
+    ## Papéis 
+    - Product Owner - PO 
+    - ScrumMaster (Tech lead ou líder técnico)
+    - Equipe scrum 
+    ## Cerimônias (ritual) 
+    - planejamento da sprint
+    - reunião diária
+    - revisão de sprint
+    - retrospectiva da sprint (forma anônima? - resolver improdutividade)
+    ## Artefatos 
+    - Product Backlog
+    - Sprint Backlog
+    - Burndown (gráfico de produtividade do scrum) -> entregas de atividades
+    - transforma backlog do produto em backlog da sprint
+- Time box - tarefas do ágil devem ter horários
+- Scrum board
+    - colunas: backlog, sprint(to do), fazendo, teste e finalizado, icebox, epic
+
+
+
