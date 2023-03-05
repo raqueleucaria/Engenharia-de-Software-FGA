@@ -1,0 +1,32 @@
+{
+  "expo": {
+    "name": "SuperAgenda",
+    "slug": "SuperAgenda",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/react/icon.png",
+    "splash": {
+      "image": "./src/assets/react/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/react/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./src/assets/react/favicon.png"
+    }
+  }
+}
