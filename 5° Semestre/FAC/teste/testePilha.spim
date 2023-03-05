@@ -1,0 +1,118 @@
+ .data
+
+      # todas as mensagens que quero exibir na tela
+  msg1:   .asciiz "Digite g: " #msg1 é o rótulo da variavel
+  msg2:   .asciiz "Digite h: "
+  msg3:   .asciiz "Digite i: " 
+  msg4:   .asciiz "Digite j: "
+  res:    .asciiz "f = (g + h) - (i + j) = "
+  nl:     .asciiz "\n"
+      
+      .text
+
+  main:
+      #$s0: g
+      #$s1: h
+      #$s2: i
+      #$s3: j
+
+      # imprimir msg1
+      li      $v0, 4      # $v0=4
+      la      $a0, msg1   # carrega em $a0 o end. de memoria de msg1
+      syscall
+
+      # le um numero inteiro do teclado
+      li      $v0, 5      # $v0=5
+      syscall
+      move    $s0, $v0     # move para $s0 o valor lido do teclado que esta em $v0
+
+      # imprimir msg2
+      li      $v0, 4      # $v0=4
+      la      $a0, msg2   # carrega em $a0 o end. de memoria de msg1
+      syscall
+
+      # le um numero inteiro do teclado
+      li      $v0, 5      # $v0=5
+      syscall
+      move    $s1, $v0     # move para $s1 o valor lido do teclado que esta em $v0
+
+      # imprimir msg3
+      li      $v0, 4      
+      la      $a0, msg3   
+      syscall
+
+      # le um numero inteiro do teclado
+      li      $v0, 5      
+      syscall
+      move    $s2, $v0     
+
+      # imprimir msg4
+      li      $v0, 4      
+      la      $a0, msg4   
+      syscall
+
+      # le um numero inteiro do teclado
+      li      $v0, 5      
+      syscall
+      move    $s3, $v0     
+
+      # ----------------
+      # Chama a função exemplo_folha
+
+      # (a) - Salva os argumentos da funcao
+      move 	$a0, $s0	
+      move 	$a1, $s1
+      move 	$a2, $s2
+      move 	$a3, $s3
+
+      # (b) - Desvia o fluxo para a funcao
+      jal		exemplo folha				
+      
+      # (c) - Salva o retirna da função
+      move 	$v0, $s4		# $v0 = s41
+      # ----------------
+
+      # Imprime o resultado na tela
+      li      $v0, 4      # $v0=4
+      la      $a0, res    # carrega em $a0 o end. de memoria de res
+      syscall
+
+      li      $v0, 1
+      move    $a0, $s4    # $sa0 = $s4, o numero a ser impresso
+      syscall
+
+      # Imprimindo o \n
+      li      $v0, 4
+      la      $a0, nl
+      syscall
+
+      # Encerrar o programa
+      li      $v0, 10
+      syscall
+
+exemplo_folha:
+    # $s0: f
+
+    # 1 - Ajuste do armazenamento? Salva $s0 na pilha
+    # (a) - Alocar espaca na pilha:
+    addi	$sp, $sp, -4	
+    # (b) - Salva o dado na pilha:
+    sw		$so, 4($sp)	
+
+    # 2 - Executa o provedimento
+    add		$t0, $a0, $a1
+    add		$t1, $a2, $a3
+    sub		$s0, $t0, $t1
+
+    # 3 - Salva o resultado no registrador de retorno
+    move 	$v0, $s0		# $v0 = s01
+
+    # 4 - Restaura os dados de pilha
+    # (a) - Restaura o dado da pilha
+    lw		$s0, 4($sp)
+    # (b) - Desalocar o espaço da pilha
+    addi    $sp, $sp, 4
+
+    # 5 - Retornar ao caller
+    jr		$ra					# jump to $ra
+

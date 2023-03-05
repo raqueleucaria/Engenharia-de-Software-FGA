@@ -1,0 +1,60 @@
+    .data
+
+nl:     .asciiz "\n"
+
+    .text
+
+main:
+    
+    li		$v0,5 		
+    syscall
+    move 	$t0, $v0	
+
+    li		$t1,  7
+       
+    bgt		$t0, 100, quarto	# $t0 > 100 
+    bgt		$t0, 30, terceiro	# $t0 > 30 
+    bgt		$t0, 10, segundo	# $t0 > 10
+
+    j Exit
+
+segundo: 
+    # 11 a 30 = R$1
+    sub		$t2, $t0, 10		# $t2 = $t0 - 30
+    add		$t1, $t2, $t1		# $t1 = $t2 + $t1
+
+    j Exit
+        
+terceiro: 
+    # 31 a 100 = R$ 2
+    addi	$t1, $t1, 20	# $t1 = $t1 + 20
+
+    sub		$t2, $t0, 30
+    mul     $t2, $t2, 2
+
+    add		$t1, $t2, $t1		# $t1 = $t2 + $t1
+
+    j Exit
+
+quarto: 
+    # 100 + = R$ 5
+    addi	$t1, $t1, 160	# $t1 = $t1 + 20
+
+    sub		$t2, $t0, 100
+    mul     $t2, $t2, 5
+
+    add		$t1, $t2, $t1		# $t1 = $t2 + $t1
+
+    j Exit
+
+Exit:
+    li		$v0, 1		# imprime resultado
+    move    $a0, $t1
+    syscall
+
+    li		$v0,4 		# $v0 4= 
+    la		$a0, nl		# pula linha
+    syscall
+
+    li		$v0, 10 	
+    syscall

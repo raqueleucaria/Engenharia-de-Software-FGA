@@ -1,0 +1,82 @@
+        .data
+NewLine: .asciiz "\n"
+	.globl main
+A: .asciiz "A"
+B: .asciiz "B"
+C: .asciiz "C"
+D: .asciiz "D"
+E: .asciiz "E"
+	
+	
+        .text
+main:
+	
+	li $v0, 5 
+	syscall 
+	move $t0, $v0 
+	
+	addi $t1, $zero, 86 
+	addi $t2, $zero, 85 
+	addi $t3, $zero, 61 
+	addi $t4, $zero, 60 
+	addi $t5, $zero, 36 
+	addi $t6, $zero, 35 
+	addi $t7, $zero, 1 
+		
+
+	bge $t0, $t1, PrintA 
+	ble $t0, $t2, NotaB  
+	
+PrintA:	li $v0, 4 
+	la $a0, A 
+	syscall	
+		
+	j Termina 
+		
+
+NotaB:	
+        bge $t0, $t3, PrintB 
+	ble $t0, $t4, NotaC 
+		
+PrintB: 
+        li $v0, 4 
+	la $a0, B 
+	syscall 
+		
+	j Termina 
+		
+
+NotaC: 	
+        bge $t0, $t5, PrintC 
+	ble $t0, $t6, NotaD  
+	
+PrintC: li $v0, 4 
+	la $a0, C 
+	syscall 
+		
+	j Termina 
+	
+
+NotaD: 	
+        bge $t0, $t7, PrintD 
+  	beq $t0, $zero, PrintE 
+	  	
+PrintD:	
+        li $v0, 4 
+	la $a0, D 
+	syscall 
+		
+	j Termina 
+		
+
+PrintE: 
+        li $v0, 4 
+	la $a0, E 
+	syscall 
+		
+	j Termina 
+			
+
+Termina:li $v0, 4 
+	la $a0, NewLine 
+	syscall 

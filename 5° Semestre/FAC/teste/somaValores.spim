@@ -1,0 +1,53 @@
+ .data
+
+      # todas as mensagens que quero exibir na tela
+  msg1:   .asciiz "Digite a: " #msg1 é o rótulo da variavel
+  msg2:   .asciiz "Digite b: "
+  res:    .asciiz "a + b = "
+  nl:     .asciiz "\n"
+      
+      .text
+
+  main:
+      #$t0: a
+      #$t1: b
+
+
+      # imprimir a frase "digite a"
+      li      $v0, 4      # $v0=4
+      la      $a0, msg1   # carrega em $a0 o end. de memória de msg1
+      syscall
+
+      # le um numero inteiro do teclado
+      li      $v0, 5      # $v0=5
+      syscall
+      move    $t0, $v0     # move para $t0 o valor lido do teclado que esta em $v0
+
+      # imprimir a frase "digite b"
+      li      $v0, 4      # $v0=4
+      la      $a0, msg2   # carrega em $a0 o end. de memória de msg1
+      syscall
+
+      # le um numero inteiro do teclado
+      li      $v0, 5      # $v0=5
+      syscall
+      move    $t1, $v0     # move para $t0 o valor lido do teclado que esta em $v0
+      
+      add     $t2, $t0, $t1 # $t2 = $t0 + $t1
+      # Imprime o resultado na tela
+      li      $v0, 4      # $v0=4
+      la      $a0, res    # carrega em $a0 o end. de memória de res
+      syscall
+
+      li      $v0, 1
+      move    $a0, $t2    # $sa0 = $t2, o numero a ser impresso
+      syscall
+
+      # Imprimindo o \n
+      li      $v0, 4
+      la      $a0, nl
+      syscall
+
+      # Encerrar o programa
+      li      $v0, 10
+      syscall
