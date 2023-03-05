@@ -1,0 +1,312 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 6736
+License: Customer
+
+Current time: 	Fri Sep 23 09:25:50 BRT 2022
+Time zone: 	Brasilia Standard Time (America/Sao_Paulo)
+
+OS: Windows 7
+OS Version: 6.1
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1440x900
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 50 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2018.3/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Alunos
+User home directory: C:/Users/Alunos
+User working directory: C:/Users/Alunos/Documents/trabalhos/Modulo07_2
+User country: 	BR
+User language: 	pt
+User locale: 	pt_BR
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.3
+RDI_DATADIR: C:/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: C:/Users/Alunos/AppData/Roaming/Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: C:/Users/Alunos/AppData/Roaming/Xilinx/Vivado/2018.3/
+Vivado layouts directory: C:/Users/Alunos/AppData/Roaming/Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Alunos/Documents/trabalhos/Modulo07_2/vivado.log
+Vivado journal file location: 	C:/Users/Alunos/Documents/trabalhos/Modulo07_2/vivado.jou
+Engine tmp dir: 	C:/Users/Alunos/Documents/trabalhos/Modulo07_2/.Xil/Vivado-6736-HP-PC
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.3
+XILINX_SDK: C:/Xilinx/SDK/2018.3
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 507 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// WARNING: HEventQueue.dispatchEvent() is taking  2721 ms.
+// TclEventType: PROJECT_OPEN_DIALOG
+// WARNING: HTimer (HSTRUtils Dump STR Log Timer) is taking 740ms to process. Increasing delay to 4000 ms.
+// TclEventType: PROJECT_OPEN_DIALOG
+// HOptionPane Warning: 'This project was created with a future version of Vivado. It will be opened in read-only mode for the protection of unrecognized data. Please use 'File | Save Project As...' if you need to alter a copy of this project. The project may or may not open reliably with this version of Vivado. OK to proceed and open the project? (Future Project Version)'
+// WARNING: HEventQueue.dispatchEvent() is taking  1440 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 514 MB. GUI used memory: 43 MB. Current time: 9/23/22, 9:25:53 AM BRT
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // x (w, cp)
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+// [GUI Memory]: 103 MB (+105934kb) [-02:-58:-38]
+// [Engine Memory]: 552 MB (+427411kb) [-02:-58:-38]
+// f (cp): New Project: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 558 MB. GUI used memory: 72 MB. Current time: 9/23/22, 9:26:19 AM BRT
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectCheckBox(PAResourceItoN.NewProjectWizard_DO_NOT_SPECIFY_SOURCES_AT_THIS_TIME, "Do not specify sources at this time", false); // g (a, f): FALSE
+selectCheckBox(PAResourceItoN.NewProjectWizard_DO_NOT_SPECIFY_SOURCES_AT_THIS_TIME, "Do not specify sources at this time", false); // g (a, f): FALSE
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, f)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (C, f)
+// Elapsed time: 20 seconds
+String[] filenames31467 = {"C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/comp1.vhd", "C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/overflow.vhd", "C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/somador.vhd", "C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/somador4bits.vhd", "C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/sumSub.vhd"};
+setFileChooser(filenames31467);
+selectButton("NEXT", "Next >"); // JButton (j, f)
+// HMemoryUtils.trashcanNow. Engine heap size: 578 MB. GUI used memory: 45 MB. Current time: 9/23/22, 9:26:57 AM BRT
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a (C, f)
+setFileChooser("C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Basys3_Master.xdc");
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_ADD_FILES, "Add Files"); // a (C, f)
+selectButton("NEXT", "Next >"); // JButton (j, f)
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i (T, f)
+selectTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Basys3 ; Basys3 ; digilentinc.com ; 1.1 ; xc7a35tcpg236-1 ; 236 ; C.0 ; 106 ; 20800 ; 41600 ; 50 ; 0 ; 90 ; 2 ; 2 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 5 ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 0, "Basys3", 0); // e (Q, f)
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectButton("NEXT", "Next >"); // JButton (j, f)
+// bx (f):  Create Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project project_1 C:/Users/Alunos/project_1 -part xc7a35tcpg236-1 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 618 MB (+39997kb) [-02:-57:-29]
+// [Engine Memory]: 651 MB (+1876kb) [-02:-57:-29]
+// WARNING: HEventQueue.dispatchEvent() is taking  3144 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 657 MB. GUI used memory: 52 MB. Current time: 9/23/22, 9:27:30 AM BRT
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 691.867 ; gain = 56.223 
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: set_property board_part digilentinc.com:basys3:part0:1.1 [current_project] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property target_language VHDL [current_project] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property simulator_language VHDL [current_project] 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse {C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/somador4bits.vhd C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/comp1.vhd C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/sumSub.vhd C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/somador.vhd C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Sources/overflow.vhd} 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -force -norecurse 
+// Tcl Message: INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1' 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -fileset constrs_1 -force -norecurse C:/Users/Alunos/Documents/trabalhos/Modulo07_2/Basys3_Master.xdc 
+// Elapsed time: 12 seconds
+selectButton("FINISH", "Finish"); // JButton (j, f)
+// 'g' command handler elapsed time: 77 seconds
+// [GUI Memory]: 111 MB (+2109kb) [-02:-57:-23]
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // x (w)
+dismissDialog("Create Project"); // bx (f)
+dismissDialog("New Project"); // f (cp)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// [Engine Memory]: 686 MB (+3320kb) [-02:-57:-20]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 14 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sumSub(Behavioral) (sumSub.vhd)]", 1); // B (D, cp)
+// PAPropertyPanels.initPanels (sumSub.vhd) elapsed time: 0.7s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sumSub(Behavioral) (sumSub.vhd)]", 1, true); // B (D, cp) - Node
+// WARNING: HEventQueue.dispatchEvent() is taking  2457 ms.
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sumSub(Behavioral) (sumSub.vhd)]", 1, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sumSub(Behavioral) (sumSub.vhd)]", 1, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, sumSub(Behavioral) (sumSub.vhd)]", 1, true, false, false, false, false, true); // B (D, cp) - Double Click - Node
+// Elapsed time: 14 seconds
+selectCodeEditor("sumSub.vhd", 597, 94); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 30 seconds
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // B (f, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// bx (cp):  Resetting Runs : addNotify
+selectButton(PAResourceCommand.PACommandNames_RUN_BITGEN, "run_bitstream"); // B (f, cp)
+dismissDialog("Resetting Runs"); // bx (cp)
+// bx (cp):  Generate Bitstream : addNotify
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 2 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Sep 23 09:28:44 2022] Launched synth_1... Run output will be captured here: C:/Users/Alunos/project_1/project_1.runs/synth_1/runme.log [Fri Sep 23 09:28:44 2022] Launched impl_1... Run output will be captured here: C:/Users/Alunos/project_1/project_1.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 710.367 ; gain = 0.000 
+dismissDialog("Generate Bitstream"); // bx (cp)
+// TclEventType: RUN_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 809ms to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 1133ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1133 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1020 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1124 ms.
+// WARNING: HTimer (ExpRunMonitor Update Timer) is taking 509ms to process. Increasing delay to 3000 ms.
+// TclEventType: RUN_COMPLETED
+// WARNING: updateGUI() is taking  1001 ms.
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 7349ms to process. Increasing delay to 4000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  7349 ms.
+// Elapsed time: 655 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Open Hardware Manager]", 21, true); // u (Q, cp) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_HARDWARE_MANAGER
+// Tcl Command: 'rdi::info_commands get_hw_probes'
+// Tcl Command: 'load_features labtools'
+// TclEventType: LOAD_FEATURE
+// bx (cp):  Open Hardware Manager : addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  7729 ms.
+// Tcl Message: open_hw 
+// TclEventType: HW_SESSION_OPEN
+// PAPropertyPanels.initPanels (sumSub.vhd) elapsed time: 0.2s
+// WARNING: HEventQueue.dispatchEvent() is taking  11023 ms.
+// Elapsed time: 20 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// Tcl Message: open_hw: Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 741.977 ; gain = 14.035 
+// 'Q' command handler elapsed time: 21 seconds
+dismissDialog("Open Hardware Manager"); // bx (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  4911 ms.
+// Elapsed time: 14 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cQ, cp)
+selectButton(PAResourceOtoP.ProgramDebugTab_OPEN_TARGET, "Open target"); // h (cQ, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET, "Auto Connect"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_TARGET
+// [GUI Memory]: 120 MB (+4378kb) [-02:-44:-38]
+// bx (cp):  Auto Connect : addNotify
+// Tcl Message: connect_hw_server 
+// Tcl Message: INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121 
+// Tcl Message: INFO: [Labtools 27-2222] Launching hw_server... 
+// Tcl Message: INFO: [Labtools 27-2221] Launch Output:  ****** Xilinx hw_server v2018.3   **** Build date : Dec  7 2018-00:40:27     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   
+// TclEventType: HW_SERVER_UPDATE
+// Tcl Message: connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 743.684 ; gain = 0.000 
+// Tcl Message: open_hw_target 
+// TclEventType: HW_TARGET_CHANGE
+// TclEventType: HW_TARGET_CLOSE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_ADD
+// TclEventType: HW_TARGET_UPDATE
+// WARNING: HEventQueue.dispatchEvent() is taking  5226 ms.
+// Tcl Message: INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183A2841DA 
+// Tcl Message: open_hw_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1635.578 ; gain = 891.895 
+// WARNING: HEventQueue.dispatchEvent() is taking  1448 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,348 MB. GUI used memory: 58 MB. Current time: 9/23/22, 9:40:40 AM BRT
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Alunos/project_1/project_1.runs/impl_1/sumSub.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: current_hw_device [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// [Engine Memory]: 1,349 MB (+658998kb) [-02:-44:-16]
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0). 
+// Elapsed time: 22 seconds
+dismissDialog("Auto Connect"); // bx (cp)
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h (cQ, cp)
+// PAPropertyPanels.initPanels (xc7a35t_0) elapsed time: 0.2s
+// Run Command: PAResourceCommand.PACommandNames_PROGRAM_FPGA
+// bC (cp): Program Device: addNotify
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+selectButton(PAResourceOtoP.ProgramFpgaDialog_PROGRAM, "Program"); // a (bC)
+// bx (cp):  Program Device : addNotify
+dismissDialog("Program Device"); // bC (cp)
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// Tcl Message: set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: set_property PROGRAM.FILE {C:/Users/Alunos/project_1/project_1.runs/impl_1/sumSub.bit} [get_hw_devices xc7a35t_0] 
+// Tcl Message: program_hw_devices [get_hw_devices xc7a35t_0] 
+// TclEventType: HW_DEVICE_CHANGE
+// Tcl Message: INFO: [Labtools 27-3164] End of startup status: HIGH 
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_SYSMON_CHANGE
+// TclEventType: HW_DEVICE_UPDATE
+// TclEventType: HW_DEVICE_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: HW_DEVICE_PROBES_CHANGE
+// Tcl Message: refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0] 
+// Tcl Message: INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it. 
+// 'I' command handler elapsed time: 27 seconds
+// Elapsed time: 24 seconds
+selectButton(PAResourceOtoP.ProgramDebugTab_PROGRAM_DEVICE, "Program device"); // h
+dismissDialog("Program Device"); // bx (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,371 MB. GUI used memory: 58 MB. Current time: 9/23/22, 9:41:16 AM BRT
+// WARNING: HEventQueue.dispatchEvent() is taking  3310 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1328 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1712 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1266 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 201ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1327 ms.
+// WARNING: HSwingWorker (Update Runs Swing Worker) is taking 7276 ms. Increasing delay to 3000 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 7456 ms. Increasing delay to 22368 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 5 ms. Decreasing delay to 2005 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1445 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2596 ms.
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 548ms to process. Increasing delay to 3000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1467 ms.
+// WARNING: HTimer (WrapperUtils Delayed Delete Timer) is taking 256ms to process. Increasing delay to 2000 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  37432 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,384 MB. GUI used memory: 58 MB. Current time: 9/23/22, 10:11:55 AM BRT
+// WARNING: HEventQueue.dispatchEvent() is taking  1367 ms.
+// Elapsed time: 2318 seconds
+selectCodeEditor("sumSub.vhd", 24, 98); // cl (w, cp)
+selectCodeEditor("sumSub.vhd", 23, 93); // cl (w, cp)
+selectCodeEditor("sumSub.vhd", 26, 93); // cl (w, cp)
+selectCodeEditor("sumSub.vhd", 28, 94); // cl (w, cp)
+typeControlKey((HResource) null, "sumSub.vhd", 'c'); // cl (w, cp)
+// Elapsed time: 349 seconds
+selectCodeEditor("sumSub.vhd", 408, 247); // cl (w, cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  1068 ms.
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 63 seconds
+closeMainWindow("project_1 - [C:/Users/Alunos/project_1/project_1.xpr] - Vivado 2018.3"); // cp
+// al (cp): Save Project: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2933 ms.

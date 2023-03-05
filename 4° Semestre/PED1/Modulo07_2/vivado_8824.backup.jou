@@ -1,0 +1,36 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Sep 21 10:53:07 2022
+# Process ID: 8824
+# Current directory: F:/trabalhos/Modulo07_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8564 F:\trabalhos\Modulo07_2\Modulo07.xpr
+# Log file: F:/trabalhos/Modulo07_2/vivado.log
+# Journal file: F:/trabalhos/Modulo07_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/trabalhos/Modulo07_2/Modulo07.xpr
+update_compile_order -fileset sources_1
+save_project_as EXP7 C:/Users/Alunos/Documents/EXP7 -force
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+open_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/Alunos/Documents/EXP7/EXP7.runs/impl_1/sumSub.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/Alunos/Documents/EXP7/EXP7.runs/impl_1/sumSub.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]

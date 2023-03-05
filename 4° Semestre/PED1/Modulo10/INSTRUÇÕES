@@ -1,0 +1,38 @@
+CHAVE		FUNÇÃO
+15		Operação
+14		b(0)
+13		b(1)
+12		b(2)
+11		b(3)
+10		a(0)
+09		a(1)
+08		a(2)
+07		a(3)
+06		Inutilizado
+05		Inutilizado
+04		Inutilizado
+03		Inutilizado
+02		Inutilizado
+01		Inutilizado
+00		Inutilizado
+---------------------------
+
+LED		FUNÇÃO
+15		Inutilizado
+14		Inutilizado
+13		Inutilizado
+12		Inutilizado
+11		Inutilizado
+10		Inutilizado
+09		Inutilizado
+08		Inutilizado
+07		Inutilizado
+06		Inutilizado
+05		Inutilizado
+04		Inutilizado
+03		Inutilizado
+02		Inutilizado
+01		Inutilizado
+00		Overflow
+
+Display 7 segmentos mostram operação na forma AB_S. Caso o resultado seja negativo, o display de resultado apaga.

@@ -1,0 +1,19 @@
+CHAVE		FUNÇÃO
+15		m(0)
+14		m(1)
+13		m(2)
+12		m(3)
+11		c(0)
+10		c(1)
+09		c(2)
+08		c(3)
+07		d(0)
+06		d(1)
+05		d(2)
+04		d(3)
+03		u(0)
+02		u(1)
+01		u(2)
+00		u(3)
+
+Displays 7 segmentos apresentam valores decimais dos BCDs inseridos

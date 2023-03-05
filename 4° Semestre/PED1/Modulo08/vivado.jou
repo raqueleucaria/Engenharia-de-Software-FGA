@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri Sep 23 10:17:16 2022
+# Process ID: 6184
+# Current directory: F:/trabalhos/PED1/Modulo08
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1992 F:\trabalhos\PED1\Modulo08\Modulo08.xpr
+# Log file: F:/trabalhos/PED1/Modulo08/vivado.log
+# Journal file: F:/trabalhos/PED1/Modulo08\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/trabalhos/PED1/Modulo08/Modulo08.xpr
+update_compile_order -fileset sources_1
+save_project_as experimeto8 C:/Users/Alunos/Desktop/pedro/experimeto8 -force
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run impl_1
