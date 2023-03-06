@@ -1,0 +1,59 @@
+    .data
+
+msgE:       .asciiz "E\n"        # E = 0
+msgD:      .asciiz "D\n"        # 1 <= D <= 35
+msgC:      .asciiz "C\n"        # 36 <= C <= 60
+msgB:      .asciiz "B\n"        # 61 <= B <= 85
+msgA:      .asciiz "A\n"        # 86 <= A <= 100
+
+
+    .text
+
+main:
+        li $v0, 5               # le o inteiro da nota
+        syscall
+        move $t0, $v0           
+
+        beq $t0, $zero, caso1   # caso $t0 = 0, vá para o case 1
+
+caso1:      
+        bgt $t0, $zero, caso2   # s,t,label -->	branch if s>t
+        li $v0, 4               # imprimi na tela
+        la $a0, msgE            # endereço de msgE -> IMPRIMI 0
+        syscall
+        j end
+
+caso2:
+        addi $t1, $zero, 35     # $t1 = 35
+        bgt $t0, $t1, caso3     # $t0 > $t1 ---> case 3
+        li $v0, 4
+        la $a0, deuD            # endereço de deuD
+        syscall
+        j end
+
+caso3:
+        addi $t1, $zero, 60     # $t1 = 60
+        bgt $t0, $t1, caso4     # $t0 > $t1 ---> case 4
+        li $v0, 4,
+        la $a0, msgD            # endereço de msgD
+        syscall
+        j end
+
+caso4:
+        addi $t1, $zero, 85     # $t1 = 85
+        bgt $t0, $t1, caso5     # $t0 > $t1 ---> case 5
+        li $v0, 4
+        la $a0, msgB           
+        syscall
+        j end
+
+caso5:
+        bgt $t1, 100, end       # t1>100
+        li $v0, 4
+        la $a0, msgA        
+        syscall
+        j end
+
+end:
+        li $v0, 10      # encerrar o programa
+        syscall

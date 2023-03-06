@@ -1,0 +1,75 @@
+import pandas as pd
+import plotly.express as px
+import requests
+import os
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
+from dash.dependencies import Input, Output
+
+app= dash.Dash(__name__)
+
+file_url = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv'
+file_path = 'C:/Users/User/Documents/MATÉRIAS DA UNB/APC/trab.1/covid-data.csv'
+
+if not os.path.exists(os.path.dirname(file_path)):
+    os.makedirs(os.path.dirname(file_path))
+
+r = requests.get(file_url, stream=True)
+
+with open(file_path, "wb") as pdf:
+    for chunk in r.iter_content(chunk_size=1024):
+        # writing one chunk at a time to pdf file
+        if chunk:
+            pdf.write(chunk)
+
+df_world = pd.read_csv(file_path)
+df_brazil = pd.read_csv('C:/Users/User/Documents/MATÉRIAS DA UNB/APC/trab.1/covid-estados.csv')
+
+filt_world = ["total_cases", "location", "date", "total_deaths", "human_development_index", "total_vaccinations", "total_cases_per_million", "total_deaths_per_million"]
+filt_brazil = ["date", "state", "confirmed", "deaths", "death_rate", "confirmed_per_100k_inhabitants"]
+lists_world = {}
+lists_brazil = {}
+
+for i in filt_world:
+    lists_world[i] = df_world[i].tolist()
+for i in filt_brazil:
+    lists_brazil[i] = df_brazil[i].tolist()
+
+
+app.layout = html.Div([
+    html.H1("gáficos covid-19" , style={'text-align' : 'center'}),
+
+    dcc.Dropdown(id="escolha_o_gráfico",
+                options=(
+                    {'label':'total_cases', 'value':'total_cases'},
+                    {'label':'total_cases_per_million', 'value':'total_cases_per_million'},
+                    {'label':'total_deaths', 'value':'total_deaths'},
+                    {'label':'total_deaths_per_million', 'value':'total_deaths_per_million'}),
+                multi=False,
+                value='total_deaths_per_million',
+                style={'width':'40%'}
+                    ),
+                    
+    html.Div(id='output_container'),
+    html.Br(),
+
+    dcc.Graph(id='covid')
+                        ])
+
+@app.callback(
+    [Output(component_id='output_container', component_property='info'),
+    Output(component_id='covid', component_property='figure')],
+    [Input(component_id="escolha_o_gráfico", component_property='value')]
+                )
+
+def update_graph(opção_selecionada):
+
+    container = "O gráfico mostrado é de: {}".format(opção_selecionada)
+
+    fig = px.line(x=lists_world["date"],
+              y=lists_world[options],
+              color=lists_world["location"],
+              title= options)
+
+    return container, fig

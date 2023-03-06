@@ -1,0 +1,156 @@
+        .data
+
+nl:     .asciiz "\n"
+esp:    .asciiz " "
+
+        .text
+
+ # $t0 = numero inserido
+ # t1 = i ; t2 = j 
+ # s1 = m para a piramide 2
+ # s0 = 0 
+
+main:
+    li		$s0, 0		# $s0 = 0 
+    
+    li		$v0,5 		# le 
+    syscall
+    move 	$t0, $v0	# $t0 = $v0 
+
+    addi	$t0, $t0, 1     # $t0 = $t0 + 1
+      
+    j piramide
+
+piramide:
+    li		$t1, 0		# $t1 = 0 
+    li		$t2, 0		# $t2 = 0
+
+    j loopI
+
+loopI:
+    beq		$t1, $t0, trocaPiramide	# if i == n // $t1 == $t0
+
+    move 	$t2, $t1		# $t2 = $t1
+
+    j loopJ
+    
+loopJ:    
+    beq		$t2, 0, addiI	# if $t2 == 0 then goto loopI
+
+    bge		$t1, 10, print1     # if $t1 >= 10 go to print2
+    blt		$t1, 10, print2	    # if $t1 < 10 go to print2
+
+addiI:
+    addi	$t1, $t1, 1			# $t1 = $t1 + 1 / i++
+
+    li		$v0,4 		# $v0 4= 
+    la		$a0, nl		# pula linha
+    syscall
+
+    j loopI
+
+print1:
+    li		$v0, 1		## print resultado
+    move    $a0, $t1
+    syscall
+
+    li		$v0,4 		# $v0 4= 
+    la		$a0, esp	# espaco entre
+    syscall
+
+    sub		$t2, $t2, 1		# $t2 = $21 - $t2
+    j loopJ
+
+print2:
+
+    li		$v0, 1		## print 0
+    move    $a0, $s0
+    syscall
+
+    li		$v0, 1		## print resultado
+    move    $a0, $t1
+    syscall
+
+    li		$v0, 4 		# $v0 4= 
+    la		$a0, esp	# espaco
+    syscall
+
+    sub		$t2, $t2, 1     # $t2 = $21 - $t2
+    j loopJ
+    
+trocaPiramide:
+    li		$v0,4 		   
+    la		$a0, nl         # print pular linha
+    syscall
+
+    j piramide2
+
+piramide2:
+    move 	$t1, $s0	# $t1 = s0
+    move 	$t2, $s0	# $t2 = s0
+
+    j loopPir2
+
+loopPir2:
+    li		$s1, 0		# $s1 =0 
+    
+
+    beq		$t1, $t0, Exit	# if i == n // $t1 == $t0
+
+    move 	$t2, $t1	# $t2 = $t1
+
+    j loopJPir2
+
+loopJPir2:    
+    beq		$t2, 0, addiI2	# if $t2 == 0 then goto loopI
+
+    addi	$s1, $s1, 1			# $s1++
+    
+    bge		$s1, 10, print1Pir2     # if $t1 >= 10 go to print1
+    blt		$s1, 10, print2Pir2 	# if $t1 < 10 go to print2
+
+addiI2:
+    addi	$t1, $t1, 1	# $t1 = $t1 + 1 / i++
+
+    li		$v0,4 		# $v0 4= 
+    la		$a0, nl         # print pular linha
+    syscall
+
+    j loopPir2
+
+print1Pir2:
+    li		$v0, 1		## print resultado
+    move    $a0, $s1
+    syscall
+
+    li		$v0,4 		    # $v0 4= 
+    la		$a0, esp            # espaco entre
+    syscall
+
+    sub		$t2, $t2, 1		# $t2 = $21 - $t2
+    j loopJPir2
+
+print2Pir2:
+
+    li		$v0, 1		## print 0
+    move    $a0, $s0
+    syscall
+
+    li		$v0, 1		## print resultado
+    move    $a0, $s1
+    syscall
+
+    li		$v0, 4 		# $v0 4= 
+    la		$a0, esp	# espaco entre
+    syscall
+
+    sub		$t2, $t2, 1	# $t2 = $21 - $t2
+    j loopJPir2
+
+Exit:    
+    li		$v0,4 		# $v0 4= 
+    la		$a0, nl         # print pular linha
+    syscall
+
+    li		$v0, 10 	# exit
+    syscall

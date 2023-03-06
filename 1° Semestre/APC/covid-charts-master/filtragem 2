@@ -1,0 +1,41 @@
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv("./data/dado.csv")
+
+filt = ['date','total_deaths','new_deaths','new_cases','location','human_development_index','total_vaccinations']
+lists = {}
+
+for i in filt:
+    lists[i] = df[i].tolist()
+
+print("""
+        OPÇÕES:
+    1. Novos casos
+    2. Vacinados
+    3. Total de mortos
+""")
+
+option = int(input("Digite o que vc quer ver? "))
+if(option == 1):
+    tmp = "new_cases"
+    fig = px.line(x=lists["date"], y=lists[tmp], color=lists["location"])
+    fig.show()
+elif(option == 2):
+    tmp = "total_vaccinations"
+    data_filter = []
+    vac = []
+    loc = []
+    for i,j in enumerate(lists["date"]):
+        ano = int(j[0:4])
+        mes = int(j[5:7])
+        if ano == 2021 or (ano == 2020 and mes == 12):
+            data_filter.append(j)
+            vac.append(lists[tmp][i])
+            loc.append(lists["location"][i])
+    fig = px.line(x=data_filter, y=vac, color=loc)
+    fig.show()
+elif(option == 3):
+    tmp = "total_deaths"
+    fig = px.line(x=lists["date"], y=lists[tmp], color=lists["location"])
+    fig.show()

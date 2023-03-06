@@ -1,0 +1,107 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Sep 16 20:46:50 2022
+# Process ID: 2394
+# Current directory: /home/gabriel/Documentos/PED1/Modulo11/Modulo11.runs/synth_1
+# Command line: vivado -log shiftReg.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source shiftReg.tcl
+# Log file: /home/gabriel/Documentos/PED1/Modulo11/Modulo11.runs/synth_1/shiftReg.vds
+# Journal file: /home/gabriel/Documentos/PED1/Modulo11/Modulo11.runs/synth_1/vivado.jou
+# Running On: fedora, OS: Linux, CPU Frequency: 2374.669 MHz, CPU Physical cores: 12, Host memory: 12404 MB
+#-----------------------------------------------------------
+source shiftReg.tcl -notrace
+Command: synth_design -top shiftReg -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2412
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2610.938 ; gain = 0.000 ; free physical = 270 ; free virtual = 12116
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'shiftReg' [/home/gabriel/Documentos/PED1/Modulo11/Sources/shiftReg.vhd:11]
+INFO: [Synth 8-3491] module 'clockDiv' declared at '/home/gabriel/Documentos/PED1/Modulo11/Sources/clockDiv.vhd:4' bound to instance 'divClock' of component 'clockDiv' [/home/gabriel/Documentos/PED1/Modulo11/Sources/shiftReg.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'clockDiv' [/home/gabriel/Documentos/PED1/Modulo11/Sources/clockDiv.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'clockDiv' (0#1) [/home/gabriel/Documentos/PED1/Modulo11/Sources/clockDiv.vhd:9]
+INFO: [Synth 8-256] done synthesizing module 'shiftReg' (0#1) [/home/gabriel/Documentos/PED1/Modulo11/Sources/shiftReg.vhd:11]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.938 ; gain = 0.000 ; free physical = 1363 ; free virtual = 13213
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.938 ; gain = 0.000 ; free physical = 1365 ; free virtual = 13214
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2610.938 ; gain = 0.000 ; free physical = 1365 ; free virtual = 13214
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2610.938 ; gain = 0.000 ; free physical = 1361 ; free virtual = 13210
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/gabriel/Documentos/PED1/Modulo11/Basys3_Master.xdc]
+Finished Parsing XDC File [/home/gabriel/Documentos/PED1/Modulo11/Basys3_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/gabriel/Documentos/PED1/Modulo11/Basys3_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/shiftReg_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/shiftReg_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2674.969 ; gain = 0.000 ; free physical = 1220 ; free virtual = 13107
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2674.969 ; gain = 0.000 ; free physical = 1220 ; free virtual = 13107
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2674.969 ; gain = 64.031 ; free physical = 1285 ; free virtual = 13177
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2674.969 ; gain = 64.031 ; free physical = 1285 ; free virtual = 13178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2674.969 ; gain = 64.031 ; free physical = 1285 ; free virtual = 13178
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2674.969 ; gain = 64.031 ; free physical = 1277 ; free virtual = 13170
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   27 Bit       Adders := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   27 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2674.969 ; gain = 64.031 ; free physical = 1255 ; free virtual = 13156
+---------------------------------------------------------------------------------

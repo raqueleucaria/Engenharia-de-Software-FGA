@@ -1,0 +1,59 @@
+multfac:
+
+# a0 = multiplicando (M)
+# a1 = multiplicador (Q)
+
+#inicializando variaveis:
+addi    $t4, $zero, 32 # $ $t4 = contador
+
+# verificando o sinal 
+slt     $t8, $a0, $zero  # se a0 < zero então t8 = 1 senão t8 = 0
+slt     $t9, $a1, $zero  # se a1 < zero então t9 = 1 senão t9 = 0
+
+beq     $t8, $zero, comparaSinal
+        nor     $a0, $a0, $zero
+        addi    $a0, $a0, 1
+
+comparaSinal: 
+    beq     $t9, $zero, passo1e2
+        nor     $a1, $a1, $zero
+        addi    $a1, $a1, 1
+
+
+passo1e2:
+    move    $t0, $zero # Passo 1 -> P[63...32] = 0
+    move    $t1, $a1 # Passo 2 -> P[31...0] = Q
+
+# Passo 3 -> Se P[0]=1, P[63...32] = P[63...32] + M
+passo3:
+    andi    $t2, $t1, 1		# $t2 = $t1 & 1 -> Verfica se soma ou não
+    beq     $t2, $zero,passo4
+        add     $t0, $t0, $a0 # ++
+
+#passo 4 -> Deslocamento
+passo4:
+    andi    $t3, $t0, 1 # máscara para ver se passa 1 ou 0
+    srl     $t0, $t0,1 
+    srl     $t1, $t1,1 
+    sll     $t3, $t3,31 # deslocamento a esquerda LSB
+    add     $t1, $t1,$t3
+
+#passo 5 -> Verifica contador -> Se não for 32a repeticao, volta passo3
+    addi    $t4, $t4, -1		
+    beq     $t4, $zero, passo6
+        j passo3
+
+# Verifica se precisa inverte sinal (+/- ou -/+ ) e inverte
+passo6:
+    beq $t8,$t9,passo7 # (1/0 ou 0/1 - linha 11 e 12)
+        nor $t0,$t0,$zero   # inverte parte alta
+        # complemento de 2:
+        nor $t1,$t1,$zero   # inverte parte baixa
+        addi $t1, $t1, 1    # soma 1 parte baixa 
+        
+# Resultado: Retorno do hi e do lo
+passo7:
+    mtlo $t1
+    mthi $t0
+    
+    jr $ra

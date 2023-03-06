@@ -1,0 +1,236 @@
+//----------------QUESTIONÁRIO 1 - OO
+
+//1 - Altere o programa Java que criamos no slide 18 para que ele armazene três alturas de pessoas. Declare três variáveis e armazene nelas os seguintes valores: 1.58, 2.07 e 0.55. Por fim, realize o cálculo da média aritmética destas alturas, , armazene o valor em uma outra variável e as apresente ao usuário.  A seguir o texto do código que criamos no slide 18.
+
+public class HelloWorldApp {
+
+      public static void main(String[] args) {
+          double num1 = 1.58, num2 = 2.07, num3 = 0.55, media;
+          media = (num1+num2+num3)/3;
+          System.out.println(media);
+    }
+}
+
+// 2 - Altere o programa criado no slide anterior para que o usuário entre com o ano e o programa calcule se a data de fevereiro entrada é correta ou não. Para tanto verifique se um ano é bissexto ou não. Lembrando que em anos bissextos, fevereiro possui 29 dias ao invés de 28.
+
+import java.util.Scanner; //leitura de dados
+
+public class ValidaData {
+    public static void main(String[] args) {
+    	int dia; 
+    	int mes;
+    	int ano;
+    	Scanner ler = new Scanner(System.in);
+    	System.out.print("Digite o dia:\n");
+    	dia = ler.nextInt();
+    	System.out.print("Digite o mes:\n");
+    	mes = ler.nextInt();
+    	System.out.print("Digite o ano:\n");
+    	ano = ler.nextInt();
+    	if(mes >= 1 && mes <= 12) {
+    		// Data Válida
+    		if(mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10|| mes == 12) {
+    			if(dia >= 1 && dia <= 31) {
+    				System.out.println("Data Válida. A data digitada foi: " + dia + "/" + mes + "/" + ano);
+    			} else {
+    				// Dia inválido
+    				System.out.println("Data Inválida");		
+    			}
+    		} else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+    			if(dia >= 1 && dia <= 30) {
+    				System.out.println("Data Válida. A data digitada foi: " + dia + "/" + mes + "/" + ano);
+    			} else {
+    				// Dia inválido
+    				System.out.println("Data Inválida");		
+    			}
+    		} else if (mes == 2) {
+                if(((ano % 400) == 0) || (((ano % 4) == 0) && ((ano % 100) != 0))){
+                	// Fevereiro tem 29 dias
+                	if(dia >= 1 && dia <= 29) {
+        				System.out.println("Data Válida. A data digitada foi: " + dia + "/" + mes + "/" + ano);
+        			} else {
+        				// Dia inválido
+        				System.out.println("Data Inválida");		
+        			}
+                } else {
+	                // Fevereiro tem 28 dias
+                	if(dia >= 1 && dia <= 28) {
+        				System.out.println("Data Válida. A data digitada foi: " + dia + "/" + mes + "/" + ano);
+        			} else {
+        				// Dia inválido
+        				System.out.println("Data Inválida");		
+        			}
+                }
+    		}
+    	} else {
+    		// Mes invalido
+    		System.out.println("Data Inválida");
+	    }
+	}
+}
+
+// 3 - Crie um programa em Java no qual o usuário deve entrar com a operação a ser realizada (soma '+', subtração '-' ou multiplicação '*') e dois números inteiros. O programa deverá utilizar o comando switch para escolher entre as operações e mostrar o resultado da operação.
+
+import java.util.Scanner; //leitura de dados
+
+public class ValidaData {
+    public static void main(String[] args) {
+    	char op; 
+    	int a;
+    	int b;
+    	int res;
+    	Scanner ler = new Scanner(System.in);
+    	
+    	System.out.print("Entre com a operação a ser realizada (+, - ou *):\n");
+    	op = ler.next().charAt(0);
+    	System.out.print("Entre com o primeiro número:\n");
+    	a = ler.nextInt();
+    	System.out.print("Entre com o segundo número:\n");
+    	b = ler.nextInt();
+    	
+    	switch (op) {
+    	case '+':
+    		res = a + b;
+    		System.out.print("O resultado da operação é: " + res);
+    		break;
+    		
+    	case '-':
+    		res = a - b;
+    		System.out.print("O resultado da operação é: " + res);
+        	break;
+        	
+    	case '*':
+    		res = a * b;
+        	System.out.print("O resultado da operação é: " + res);
+        	break;
+     
+    	default:
+    		
+    		System.out.print("Operação inválida");
+    	}
+    	
+    }
+}
+
+// 4 - Construa um programa que imprime a soma de todos os valores positivos digitados pelo usu´ario até que ele digite um número negativo.
+//Dica: use o comando do-while
+
+import java.util.Scanner;
+
+public class UsoDoWhile {
+	
+	public static void main(String[] args) {
+		int n;
+		int soma = 0;
+		Scanner ler = new Scanner(System.in);
+		
+		do {
+			
+			System.out.println("Digite um numero positivo para ser somado ou negativo para sair: ");
+			n = ler.nextInt();
+			if (n >= 0)
+				soma += n;
+			
+		} while (n >= 0);
+
+		System.out.println("A soma é: " + soma);
+	}
+
+}
+
+// 5 - Escreva um programa em java que receba um número inteiro e retorne true caso o número seja par, e false caso contrário.
+
+import java.util.Scanner; //leitura de dados
+public class Epar {
+     public static void main(String[] args) {
+        int n;
+    	Scanner ler = new Scanner(System.in);
+    	System.out.print("Digite o numero:\n");
+    	n = ler.nextInt();
+        boolean res = false;
+        if( (n % 2) == 0)
+            res = true;
+        System.out.print(res);
+    }
+}
+
+// 6 - import java.util.Scanner; //leitura de dados
+
+public class MaiorNumero{
+    public static void main(String[] args) {
+        int a, b, c, d, e, maior;
+        Scanner ler = new Scanner(System.in);
+        
+        System.out.print("Entre com o primeiro numero:\n");
+        a = ler.nextInt();
+        System.out.print("Entre com o segundo numero:\n");
+        b = ler.nextInt();
+        System.out.print("Entre com o terceiro numero:\n");
+        c = ler.nextInt();
+        System.out.print("Entre com o quarto numero:\n");
+        d = ler.nextInt();
+        System.out.print("Entre com o quinto numero:\n");
+        e = ler.nextInt();
+        
+        maior = a; 
+    
+        if(b > maior) maior = b; 
+        if(c > maior) maior = c; 
+        if(d > maior) maior = d; 
+        if(e > maior) maior = e;
+    
+        System.out.print(maior);
+    }
+}
+
+// 7 - Escreva um programa em java que receba um caracter e verifique se se trata de um caracter numérico, ou seja, um número entre 0 e 9. Se sim, o método deve retornar true. Se não, o método deve retornar false. 
+
+import java.util.Scanner; //leitura de dados
+
+public class VerificaDigito{
+    public static void main(String[] args) {
+        
+        boolean res = false;
+        char c;
+        Scanner ler = new Scanner(System.in);
+        System.out.print("Digite o caracter a ser verificado:\n");
+        c = ler.next().charAt(0);
+        
+        switch (c){
+            case '0': 
+                res = true;
+                break;
+            case '1': 
+                res = true;
+                break;
+            case '2': 
+                res = true;
+                break;
+            case '3': 
+                res = true;
+                break;
+            case '4': 
+                res = true;
+                break;
+            case '5': 
+                res = true;
+                break;
+            case '6': 
+                res = true;
+                break;
+            case '7': 
+                res = true;
+                break;
+            case '8': 
+                res = true;
+                break;
+            case '9': 
+                res = true;
+                break;
+            default: 
+                res = false;
+        }
+    
+        System.out.print(res);
+    }
+}

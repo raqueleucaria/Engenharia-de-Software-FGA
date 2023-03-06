@@ -1,0 +1,38 @@
+CHAVE		FUNÇÃO
+15		Q[0]
+14		Q[1]
+13		Q[2]
+12		Q[3]
+11		Q[4]
+10		Q[5]
+09		Q[6]
+08		Q[7]
+07		Q[8]
+06		Q[9]
+05		Q[10]
+04		Q[11]
+03		Q[12]
+02		Q[13]
+01		Q[14]
+00		Q[15]
+---------------------------
+
+LED		FUNÇÃO
+15		Entrada FlipFlop menos significativo
+14		Clear
+13		Inutilizado
+12		Inutilizado
+11		Inutilizado
+10		Inutilizado
+09		Inutilizado
+08		Inutilizado
+07		Inutilizado
+06		Inutilizado
+05		Inutilizado
+04		Inutilizado
+03		Inutilizado
+02		Inutilizado
+01		Inutilizado
+00		Inutilizado
+
+O circuito deve funcionar de forma a levar o bit do FF (LED) anterior para o seguinte, porém quando a chave clear é acionada todos os LEDs apagam, independentemente do estado da chave de entrada do FF
