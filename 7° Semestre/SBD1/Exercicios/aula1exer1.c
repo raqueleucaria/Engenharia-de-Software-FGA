@@ -40,8 +40,8 @@ void registro(FILE *arqUsuarios , FILE *arqVeiculos){
     int idRegistro = 1;
     int idCarro = 0;
 
-    arqUsuarios = fopen("bdUsuarios.txt", "r");
-    arqVeiculos = fopen("bdVeiculos.txt","r");
+    arqUsuarios = fopen("bdUsuarios.bin", "r");
+    arqVeiculos = fopen("bdVeiculos.bin","r");
 
     printf("========================================================\n");
     printf("                       Registros                        \n");
@@ -97,8 +97,8 @@ int main() {
             {
                 numUsuario = k + 1;
 
-                arqUsuarios = fopen("bdUsuarios.txt", "a");
-                arqVeiculos = fopen("bdVeiculos.txt", "a");
+                arqUsuarios = fopen("bdUsuarios.bin", "a");
+                arqVeiculos = fopen("bdVeiculos.bin", "a");
 
                 printf("Digite o nome do usuário %d: ",numUsuario);
                 scanf(" %[^\n]", usuario.nome);
@@ -149,7 +149,7 @@ int main() {
             }
             system("clear");
 
-            printf(">>>>>>>> Registro(s) cadastrado(s) com sucesso! <<<<<<<< \n");
+            printf(">>>>>>>> Registro(s) feito(s) com sucesso! <<<<<<<< \n");
             
             registro(arqUsuarios, arqVeiculos);
 
